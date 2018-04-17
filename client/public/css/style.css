@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.landing-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #dfdfdf;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.landing-container input {
+  display: block;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 10px;
+  width: 250px;
+  font-size: 18px;
+}
+.landing-container button {
+  margin: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 20px;
+  border: none;
+  color: white;
+  background-color: #0066cc;
+  cursor: pointer;
+}
+.landing-container button:hover {
+  background-color: #166dc5;
+}
+
+.chat-app-container {
+  background-color: #ffc0cb;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.side {
+  width: 30%;
+  border-right: 1px solid #000;
+  background-color: #f8f8f8;
+}
+
+.side .side-header {
+  background-color: #dfdfdf;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+}
+.side-header .user-details {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+.user-details .user-pp img {
+  border-radius: 50%;
+}
+.user-details .username {
+  margin: 0;
+  padding: 10px;
+}
+
+.side-header .user-actions {
+  flex: none;
+}
+.user-actions .add-contact {
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #1a1ab9;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.side .contact {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 16px;
+  height: 75px;
+  cursor: pointer;
+}
+
+.contact.contact-selected {
+  background-color: #d8d8d8;
+}
+
+.contact .contact-pic img {
+  border-radius: 50%;
+}
+
+.contact-details .contact-name {
+  margin: 0;
+  padding: 10px;
+}
+
+.main {
+  position: relative;
+  background-color: #f8f8f8;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main .main-header {
+  background-color: #dfdfdf;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.main-header .recipient-details {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+.recipient-details .recipient-pp img {
+  border-radius: 50%;
+}
+.recipient-details .recipient-name {
+  margin: 0;
+  padding: 10px;
+}
+
+.main .chat {
+  background-color: #f8f8f8;
+}
+
+.chat .message {
+  position: relative;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #afeeee;
+  padding-bottom: 25px;
+  box-shadow: 5px 5px 5px #888;
+}
+.message .content {
+  margin-bottom: 10px;
+}
+.message .time-stamp {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  font-size: 12px;
+}
+
+.main .message-sender {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px 16px;
+  width: 100%;
+  height: 60px;
+  background-color: #d3d3d3;
+}
+
+.message-sender form {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+.message-sender input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 10px;
+  flex-grow: 1;
+}
+.message-sender button {
+  margin-left: 10px;
+  cursor: pointer;
+}

@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "cd server && nodemon server.js",
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  }
+}
