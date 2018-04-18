@@ -10,17 +10,27 @@ A chat application built with [React]("https://reactjs.org/"), [Express]("https:
 * [Yarn]("https://yarnpkg.com/lang/en/docs/install/")
 
 ### Installing
-In the root directory, run the following commands:
+
+To get things up and running open your terminal and follow these steps:
+
+Clone repo:
+```bash
+git clone https://github.com/Amrmak/chat-app.git
+```
+Go to root directory:
+```bash
+cd chat-app
+```
 
 Install dependancies:
 
-```
+```bash
 yarn install
 ```
 
 Spin up the servers
 
-```
+```bash
 yarn start
 ```
 
