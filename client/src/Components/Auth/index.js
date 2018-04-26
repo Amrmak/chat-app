@@ -32,6 +32,7 @@ export default class Auth extends Component {
           <input
             type="text"
             placeholder="Enter Username..."
+            autoFocus
             onChange={e => this.setState({ username: e.target.value })}
           />
           <button type="submit" onClick={e => this.handleSubmit(e)}>
