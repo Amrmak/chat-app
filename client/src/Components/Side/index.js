@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-
-import SideHeader from "./SideHeader";
 import Contact from "./Contact";
+import SideHeader from "./SideHeader";
 
 export default class Side extends Component {
+  handleSelectContact = username => {
+    this.props.onSelectContact(username);
+  };
   render() {
     return (
       <div className="side">
@@ -20,6 +22,7 @@ export default class Side extends Component {
                       key={user}
                       name={user}
                       pic="http://via.placeholder.com/50x50"
+                      onSelect={this.handleSelectContact}
                     />
                   );
                 } else return null;

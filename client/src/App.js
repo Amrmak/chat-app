@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import io from "socket.io-client";
-
 import Auth from "./Components/Auth";
-import Side from "./Components/Side";
 import Main from "./Components/Main";
+import Side from "./Components/Side";
 
 export default class App extends Component {
   state = {
     username: null,
     socket: null,
     users: null,
-    messages: null
+    publicMessages: null
   };
 
   componentDidUpdate = (prevProps, prevState) => {
@@ -21,7 +20,9 @@ export default class App extends Component {
         }
       });
       this.handleSocket(socket);
-      this.setState({ socket });
+      this.setState({
+        socket
+      });
     }
   };
 
@@ -33,12 +34,12 @@ export default class App extends Component {
     socket.on("online users", users => {
       this.setState({ users });
     });
-    socket.on("messages", messages => {
-      console.log(messages);
-      this.setState({ messages });
+    socket.on("messages", publicMessages => {
+      console.log(publicMessages);
+      this.setState({ publicMessages });
     });
-    socket.on("public message", messages => {
-      this.setState({ messages });
+    socket.on("public message", publicMessages => {
+      this.setState({ publicMessages });
     });
   };
 
@@ -47,7 +48,10 @@ export default class App extends Component {
       return (
         <div className="chat-app-container">
           <Side username={this.state.username} users={this.state.users} />
-          <Main socket={this.state.socket} messages={this.state.messages} />
+          <Main
+            socket={this.state.socket}
+            publicMessages={this.state.publicMessages}
+          />
         </div>
       );
     } else {

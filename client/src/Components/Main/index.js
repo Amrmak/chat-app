@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-
+import { formatDate } from "../../helpers";
 import MainHeader from "./MainHeader";
 import Message from "./Message";
 import MessageSender from "./MessageSender";
-
-import { formatDate } from "../../helpers";
 
 export default class Main extends Component {
   render() {
@@ -12,8 +10,8 @@ export default class Main extends Component {
       <div className="main">
         <MainHeader />
         <div className="chat">
-          {this.props.messages
-            ? this.props.messages.map(msg => {
+          {this.props.publicMessages
+            ? this.props.publicMessages.map(msg => {
                 return (
                   <Message
                     key={msg.date}
