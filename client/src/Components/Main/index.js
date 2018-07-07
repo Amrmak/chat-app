@@ -8,7 +8,7 @@ export default class Main extends Component {
   render() {
     return (
       <div className="main">
-        <MainHeader />
+        <MainHeader name={this.props.name} />
         <div className="chat">
           {this.props.publicMessages
             ? this.props.publicMessages.map(msg => {

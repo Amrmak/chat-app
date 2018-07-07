@@ -8,7 +8,7 @@ export default class MainHeader extends Component {
           <div className="recipient-pp">
             <img src="http://via.placeholder.com/40x40" alt="recipient-pic" />
           </div>
-          <p className="recipient-name">Room</p>
+          <p className="recipient-name">{this.props.name}</p>
         </div>
         <div className="recipient-actions" />
       </header>

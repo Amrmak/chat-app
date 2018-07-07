@@ -9,7 +9,8 @@ export default class App extends Component {
     username: null,
     socket: null,
     users: null,
-    publicMessages: null
+    publicMessages: null,
+    selectedContact: null
   };
 
   componentDidUpdate = (prevProps, prevState) => {
@@ -43,14 +44,23 @@ export default class App extends Component {
     });
   };
 
+  handleSelectedContact = username => {
+    this.setState({ selectedContact: username });
+  };
+
   render() {
     if (this.state.socket) {
       return (
         <div className="chat-app-container">
-          <Side username={this.state.username} users={this.state.users} />
+          <Side
+            username={this.state.username}
+            users={this.state.users}
+            onSelectContact={this.handleSelectedContact}
+          />
           <Main
             socket={this.state.socket}
             publicMessages={this.state.publicMessages}
+            name={this.state.selectedContact}
           />
         </div>
       );
