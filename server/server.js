@@ -8,9 +8,9 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-let users = [];
+let users = ["Public"];
 
-let messages = [];
+let publicMessages = [];
 
 app.get("/users", (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -28,12 +28,12 @@ io.on("connection", socket => {
   console.log(`${socket.id} Connected`);
 
   io.sockets.emit("online users", users);
-  io.sockets.emit("messages", messages);
+  io.sockets.emit("messages", publicMessages);
 
   socket.on("public message", msg => {
-    messages.push(msg);
+    publicMessages.push(msg);
     console.log(msg);
-    io.emit("public message", messages);
+    io.emit("public message", publicMessages);
   });
 
   socket.on("disconnect", () => {
