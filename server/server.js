@@ -8,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-let users = [];
+let users = ["Public Room"];
 
 let publicMessages = [];
 

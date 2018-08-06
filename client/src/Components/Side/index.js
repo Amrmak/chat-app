@@ -17,9 +17,12 @@ export default class Side extends Component {
           {this.props.users
             ? this.props.users.map(user => {
                 if (user !== this.props.username) {
+                  // if username contains spaces, remove it
+                  let id = user.replace(/\s/g, "");
                   return (
                     <Contact
                       key={user}
+                      id={id}
                       name={user}
                       pic="http://via.placeholder.com/50x50"
                       onSelect={this.handleSelectContact}
